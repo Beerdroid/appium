@@ -11,7 +11,7 @@
             "@wdio/mocha-framework",
             "@wdio/appium-service",
             "@wdio/visual-service",
-            "webdriverio/async"
+            "@wdio/protocols/build/types"
         ],
         "skipLibCheck": true,
         "noEmit": true,

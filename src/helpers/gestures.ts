@@ -1,3 +1,4 @@
+// @ts-ignore
 import { RectReturn } from '@wdio/protocols/build/types';
 
 /**

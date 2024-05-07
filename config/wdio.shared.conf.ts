@@ -3,6 +3,7 @@
  * If you want to know which configuration options you have then you can
  * check https://webdriver.io/docs/configurationfile
  */
+import * as path from "node:path";
 
 
 export const config: WebdriverIO.Config = {
@@ -92,7 +93,16 @@ export const config: WebdriverIO.Config = {
     // - wdio.shared.local.conf.ts
     // - wdio.shared.sauce.conf.ts
     // configuration files
-    services: [],
+    services: [
+        ['visual', {
+            // Some options, see the docs for more
+            baselineFolder: path.join(process.cwd(), 'test', 'baseline'),
+            formatImageName: '{tag}-{logName}-{width}x{height}',
+            screenshotPath: path.join(process.cwd(), 'tmp'),
+            savePerInstance: true,
+            // ... more options
+        }]
+    ],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
